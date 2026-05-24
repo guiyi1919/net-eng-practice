@@ -1,0 +1,9 @@
+﻿- **笔记**
+- 配置多生成树。做到手动分流、线路优先级配置，1、先划vlan配置好接口状态信息。
+- 2、注意运行MSTP的一组交换机，有三个信息必须一致 （stp re进入配置
+- name、level（修订号）、instance（实例）这三个信息必须要一致，
+- region-name 1|rrevision-level 1|instance 10 vlan 10|instance 10 vlan 10
+- vlan10 放到实例10绑定【多实例vlan映射】，实例10和实例20分别做两套优先级配置以达到让他们阻塞不同的接口）
+- 华为设备要激活配置（active region-configuration）3、给各个实例，配交换机的优先级
+- tips：（core-1：stp instance 10 priority 4096|instance 20 priority 8192，core-2反之）
+- 记得要给做mstp的核心创建vlan，交换机间要记得设trunk否则BPDU 传不过去，根桥选举失败
