@@ -1,0 +1,10 @@
+﻿- **笔记**
+- LAG链路聚合能叠加带宽两根三根1G变3G，能把流量负载分担避免卡顿拥堵，
+- 链路冗余防止断网一条故障自动切换其他线路，有静态、动态（LACP）两种模式
+- 静态聚合步骤：
+- 1、创建一个聚合口（interface Eth-trunk 1【编号随便】）
+- 2、进入需要聚合的端口（interface g0/0/1）
+- 3、将端口加入到聚合组（eth-trunk 1）
+- 后续配配置就需要到聚合口配置如:
+- 进入聚合口（interface eth-trunk 1）
+- 配置trunk（port link-type trunk|port trunk allow-pass vlan【编号】）
